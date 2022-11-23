@@ -8,12 +8,12 @@
 				<div class="row">
 					<div class="col-2 mr-3">Nama</div>
 					<div class="col-1">:</div>
-					<div class="col"><?= $n['nama']; ?></div>
+					<div class="col"><?= $n['namaDeb']; ?></div>
 				</div>
 				<div class="row">
 					<div class="col-2 mr-3">NIK</div>
 					<div class="col-1">:</div>
-					<div class="col"><?= $n['nik']; ?></div>
+					<div class="col"><?= $n['nikDeb']; ?></div>
 				</div>
 				<div class="row">
 					<div class="col-2 mr-3">Karakter</div>
