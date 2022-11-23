@@ -7,7 +7,7 @@ class Auditor_model extends CI_Model
 	}
 	public function get_debitur($auditorId)
 	{
-		return $this->db->from('debitur')
+		return $this->db->select('debitur.*, hasil.status, hasil.tgl_pengajuan, hasil.debiturId, hasil.auditorId, karakter.karakter, pekerjaan.pekerjaan, pendapatan.pendapatan, pendidikan.pendidikan, rumah.rumah, tanggungan.tanggungan')
 			->join('hasil', 'debitur.id = hasil.debiturId')
 			->join('karakter', 'debitur.karakterId = karakter.id')
 			->join('pekerjaan', 'debitur.pekerjaanId = pekerjaan.id')
@@ -17,7 +17,7 @@ class Auditor_model extends CI_Model
 			->join('tanggungan', 'debitur.tanggunganId = tanggungan.id')
 			->where('auditorId', $auditorId)
 			->order_by('tgl_pengajuan', 'DESC')
-			->get()
+			->get('debitur')
 			->result_array();
 	}
 	private function _getKriteriaId($kriteria, $elemen)
