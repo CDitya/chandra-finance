@@ -7,7 +7,7 @@ class Admin_model extends CI_Model
 	}
 	public function get_debitur()
 	{
-		return $this->db->select('debitur.id, debitur.nama, debitur.nik, hasil.status, hasil.tgl_pengajuan, karakter.karakter, pekerjaan.pekerjaan, pendapatan.pendapatan, pendidikan.pendidikan, rumah.rumah, tanggungan.tanggungan')
+		return $this->db->select('debitur.id, debitur.nama, debitur.nik, hasil.status, hasil.tgl_pengajuan, karakter.karakter, pekerjaan.pekerjaan, pendapatan.pendapatan, pendidikan.pendidikan, rumah.rumah, tanggungan.tanggungan, user.nama AS namaAuditor')
 			->join('hasil', 'debitur.id = hasil.debiturId')
 			->join('karakter', 'debitur.karakterId = karakter.id')
 			->join('pekerjaan', 'debitur.pekerjaanId = pekerjaan.id')
